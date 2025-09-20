@@ -32,7 +32,8 @@ class ProfileUpdateRequest extends FormRequest
                 'max:16',
                 'alpha_num',
                 Rule::unique(User::class)->ignore($this->user()->id),
-            ]
+            ],
+            'avatar' => 'image|max:10000'
         ];
     }
 }
